@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="RiskShield - Cybersecurity Risk Assessment Framework for Small and Medium Businesses">
+  <title>RiskShield | SME Cybersecurity Risk Assessment</title>
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand"><span class="brand-mark">R</span><span>RiskShield</span></div>
+    <nav>
+      <a href="#dashboard">Dashboard</a>
+      <a href="#assessment">Assessment</a>
+      <a href="#framework">Framework</a>
+      <a href="#case-studies">Case Studies</a>
+      <a href="#best-practices">Best Practices</a>
+    </nav>
+    <button class="menu" aria-label="Toggle menu">☰</button>
+  </header>
+
+  <main>
+    <section class="hero" id="dashboard">
+      <div class="hero-copy">
+        <p class="eyebrow">SME CYBERSECURITY RISK ASSESSMENT</p>
+        <h1>Measure risk.<br><span>Reduce exposure.</span></h1>
+        <p class="lead">A practical prototype for evaluating cybersecurity risks in small and medium businesses using a simple likelihood × impact model aligned with the NIST Cybersecurity Framework approach.</p>
+        <div class="actions">
+          <a class="btn primary" href="#assessment">Start Assessment →</a>
+          <a class="btn ghost" href="#framework">Explore Framework</a>
+        </div>
+      </div>
+      <div class="hero-card">
+        <div class="shield">⌁</div>
+        <p class="muted">CURRENT RISK POSTURE</p>
+        <div class="score" id="overallScore">--</div>
+        <div class="status" id="overallStatus">Run an assessment</div>
+        <div class="mini-grid">
+          <div><b id="criticalCount">0</b><span>Critical</span></div>
+          <div><b id="highCount">0</b><span>High</span></div>
+          <div><b id="mediumCount">0</b><span>Medium</span></div>
+          <div><b id="lowCount">0</b><span>Low</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="stats">
+      <div><b>5</b><span>Risk Functions</span></div>
+      <div><b>25</b><span>Max Risk Score</span></div>
+      <div><b>4</b><span>Risk Levels</span></div>
+      <div><b>6</b><span>Sample Threats</span></div>
+    </section>
+
+    <section class="section" id="assessment">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">01 / ASSESSMENT</p>
+          <h2>Risk evaluation matrix</h2>
+        </div>
+        <p>Rate each threat from 1–5 for likelihood and impact. The score is calculated automatically.</p>
+      </div>
+
+      <div class="assessment-layout">
+        <div class="panel table-panel">
+          <div class="table-title"><span>Threat</span><span>Likelihood</span><span>Impact</span><span>Score</span></div>
+          <div id="riskRows"></div>
+        </div>
+        <aside class="panel formula">
+          <p class="eyebrow">SCORING METHOD</p>
+          <h3>Likelihood × Impact</h3>
+          <div class="formula-box">Risk Score = <strong>L × I</strong></div>
+          <ul>
+            <li><b>1–4</b> Low</li>
+            <li><b>5–9</b> Medium</li>
+            <li><b>10–16</b> High</li>
+            <li><b>17–25</b> Critical</li>
+          </ul>
+          <button class="btn primary full" id="resetBtn">Reset Assessment</button>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section" id="framework">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">02 / FRAMEWORK</p>
+          <h2>Five-part security lifecycle</h2>
+        </div>
+        <p>Use these functions to organize an SME's security controls and improvement plan.</p>
+      </div>
+      <div class="framework-grid">
+        <article><span>01</span><h3>Identify</h3><p>Inventory assets, data, users, suppliers and business processes. Understand what matters most.</p></article>
+        <article><span>02</span><h3>Protect</h3><p>Apply MFA, secure configurations, backups, access controls, patching and employee awareness.</p></article>
+        <article><span>03</span><h3>Detect</h3><p>Monitor accounts, endpoints and networks for suspicious activity and unusual behavior.</p></article>
+        <article><span>04</span><h3>Respond</h3><p>Define incident roles, communication steps, containment actions and evidence handling.</p></article>
+        <article><span>05</span><h3>Recover</h3><p>Restore services, validate backups, communicate with stakeholders and improve after incidents.</p></article>
+      </div>
+    </section>
+
+    <section class="section dark-section" id="case-studies">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">03 / VALIDATION</p>
+          <h2>Sample SME case studies</h2>
+        </div>
+        <p>Illustrative scenarios for demonstrating how the model can be applied.</p>
+      </div>
+      <div class="cases">
+        <article class="case">
+          <div class="case-top"><span>Retail</span><span class="tag high">HIGH</span></div>
+          <h3>Local Retail Store</h3>
+          <p>Shared accounts and an outdated POS system increase exposure to credential theft and malware.</p>
+          <div class="case-row"><b>Primary risk</b><span>Credential compromise</span></div>
+          <div class="case-row"><b>Priority action</b><span>MFA + unique accounts</span></div>
+        </article>
+        <article class="case">
+          <div class="case-top"><span>Professional Services</span><span class="tag critical">CRITICAL</span></div>
+          <h3>Small Accounting Firm</h3>
+          <p>Sensitive financial records are stored in cloud services with inconsistent access controls.</p>
+          <div class="case-row"><b>Primary risk</b><span>Phishing / data exposure</span></div>
+          <div class="case-row"><b>Priority action</b><span>MFA + least privilege + backups</span></div>
+        </article>
+        <article class="case">
+          <div class="case-top"><span>Manufacturing</span><span class="tag medium">MEDIUM</span></div>
+          <h3>Small Manufacturer</h3>
+          <p>Legacy systems and limited network segmentation can allow an incident to spread between systems.</p>
+          <div class="case-row"><b>Primary risk</b><span>Ransomware spread</span></div>
+          <div class="case-row"><b>Priority action</b><span>Segmentation + offline backups</span></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="best-practices">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">04 / MITIGATION</p>
+          <h2>SME security checklist</h2>
+        </div>
+        <p>Practical controls that can reduce common attack paths.</p>
+      </div>
+      <div class="check-grid">
+        <label><input type="checkbox"> Enable MFA on email, cloud and administrator accounts</label>
+        <label><input type="checkbox"> Keep operating systems, browsers and applications patched</label>
+        <label><input type="checkbox"> Maintain tested backups, including an offline or isolated copy</label>
+        <label><input type="checkbox"> Use unique accounts and least-privilege access</label>
+        <label><input type="checkbox"> Train employees to identify phishing and social engineering</label>
+        <label><input type="checkbox"> Deploy endpoint protection and firewall controls</label>
+        <label><input type="checkbox"> Create an incident response contact list and procedure</label>
+        <label><input type="checkbox"> Review vendors and third-party access regularly</label>
+      </div>
+    </section>
+
+    <section class="section methodology">
+      <div class="method-card">
+        <div>
+          <p class="eyebrow">05 / METHODOLOGY</p>
+          <h2>From risk discovery to action</h2>
+        </div>
+        <div class="steps">
+          <span>01 Asset inventory</span><i>→</i><span>02 Threat identification</span><i>→</i><span>03 L × I scoring</span><i>→</i><span>04 Mitigation</span><i>→</i><span>05 Reassess</span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div><div class="brand"><span class="brand-mark">R</span><span>RiskShield</span></div><p>Cybersecurity Risk Assessment Framework for Small Businesses.</p></div>
+    <div class="footer-right"><p>Developed by <strong>Sanskruti Kokane</strong></p><p class="muted">Prototype • GitHub Pages ready</p></div>
+  </footer>
+
+  <script src="assets/app.js"></script>
+</body>
+</html>
